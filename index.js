@@ -4,7 +4,7 @@ var ejs = require('ejs');
 var fs = require('fs');
 var DB = require('./mydb');
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://mimonenew:mimonenewpass@www.epocum.com:27017/admin';
+var url = 'mongodb://user:pass@www.host.com:27017/db';
 
 var app = express();
 
