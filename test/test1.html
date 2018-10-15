@@ -25,8 +25,9 @@
 }
 
  function cTable() {
- 
-		var json = httpGet("http://localhost/getPersone");
+	 
+ 	//var json = httpGet("http://localhost/getPersone"); // se il db è in run sul client del visitatore [(Tipo blockchain)]
+	var json = httpGet("/getPersone"); //su stesso host del server
         var js = JSON.parse(json);
         var tr;
         
