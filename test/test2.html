@@ -30,8 +30,8 @@
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
- 	
-$.getJSON('http://localhost/getPersone', function(data) {
+ 	//var json = httpGet("http://localhost/getPersone"); // se il db è in run sul client del visitatore [(Tipo blockchain)]
+	$.getJSON('/getPersone', function(data) {
 		var persone = '';
 		$.each(data, function(index, persona) {
 			persone += '<tr>';
