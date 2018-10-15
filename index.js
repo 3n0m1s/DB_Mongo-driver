@@ -34,20 +34,5 @@ app.get('/getPersone', function(req, res, next) {
 	
 });
 
-app.get('/addPersone', function(req, res, next) {
-	
-	MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
-	  if (err) throw err;
-	  var dbo = db.db("admin");
-	  dbo.collection("persone").find({}).toArray(function(err, result) {
-	    if (err) throw err;
-	    res.json(result);
-	    db.close();
-	  });
-	}); 
-	
-});
-
-
 app.use(express.static('.' + '/'));
 http.createServer(app).listen(80);
