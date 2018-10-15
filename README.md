@@ -15,9 +15,9 @@ Remember to add FW rule :
     
 Run TEST:
 
-  localhost/test1
-  localhost/test2
+    localhost/test1
+    localhost/test2
   
 Get JSON OBJECT response from local/remote mongodb 
 
-  localhost/getPersone
+    localhost/getPersone
