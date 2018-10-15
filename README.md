@@ -10,4 +10,4 @@ Get Json data and display a table - Jquery/MongoDB_Response
 
 Remember to add FW rule :
 
-  sudo ufw allow PORT
+    sudo ufw allow PORT
