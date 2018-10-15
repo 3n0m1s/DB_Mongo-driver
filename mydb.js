@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://mimonenew:mimonenewpass@www.epocum.com:27017/admin';
+var url = 'mongodb://user:pass@www.host.com:27017/db';
 
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
  
