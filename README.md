@@ -7,3 +7,7 @@ Get Json data and display a table - Jquery/MongoDB_Response
   node index.js
 
 ```
+
+Remember to add FW rule :
+
+  sudo ufw allow PORT
