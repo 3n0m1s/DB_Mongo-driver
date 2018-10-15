@@ -16,8 +16,8 @@ var addMe = function(name,phones,isactive,db, callback) {
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("admin");
-  var meAsFriend = {Name: coinbase, Phones: phones, isActive:isactive};
-  dbo.collection("persone").insertOne(meAsFriend, function(err, res) {
+  var persona = {Name: coinbase, Phones: phones, isActive:isactive};
+  dbo.collection("persone").insertOne(persona, function(err, res) {
     if (err) throw err;
     console.log("1 persona inserita");
     db.close();
@@ -30,8 +30,8 @@ var updateMe = function(name,phones,isactive, callback) {
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("admin");
-  var post = {Name:name, Phones: phones, isActive: isactive};
-  dbo.collection("persone").insertOne(post, function(err, res) {
+  var persona = {Name:name, Phones: phones, isActive: isactive};
+  dbo.collection("persone").insertOne(persona, function(err, res) {
     if (err) throw err;
     console.log("1 persona aggiornata");
     db.close();
