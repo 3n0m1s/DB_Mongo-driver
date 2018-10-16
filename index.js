@@ -50,7 +50,6 @@ app.all('/test1', function(request, response) {
 
 });
 
-
 app.all('/test2', function(request, response) {
 
 	var content = fs.readFileSync('.' +'/test/test2.html', 'utf-8');
@@ -67,10 +66,18 @@ app.all('/test2', function(request, response) {
 
 });
 
-
 app.all('/test2', function(request, response) {
 
 	var content = fs.readFileSync('.' +'/test/test2.html', 'utf-8');
+	var compiled = ejs.compile(content);
+
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(compiled({    }));
+});
+
+app.all('/test3', function(request, response) {
+
+	var content = fs.readFileSync('.' +'/test/test3.html', 'utf-8');
 	var compiled = ejs.compile(content);
 
     response.writeHead(200, {'Content-Type': 'text/html'});
@@ -109,7 +116,6 @@ app.get('/upd_persona/:nome/phones/:phones/active/:isactive', function(req, res,
 	});
 	
 });
-
 
 app.use(express.static('.' + '/'));
 http.createServer(app).listen(80);
