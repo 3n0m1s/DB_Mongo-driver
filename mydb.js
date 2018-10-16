@@ -16,7 +16,7 @@ var addMe = function(name,phones,isactive,db, callback) {
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("admin");
-  var persona = {Name: coinbase, Phones: phones, isActive:isactive};
+  var persona = {Name: name, Phones: phones, isActive:isactive};
   dbo.collection("persone").insertOne(persona, function(err, res) {
     if (err) throw err;
     console.log("1 persona inserita");
