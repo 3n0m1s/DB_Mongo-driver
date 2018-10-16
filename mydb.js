@@ -12,7 +12,7 @@ MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
 
 });
 
-var addMe = function(name,phones,isactive,db, callback) {
+var addMe = function(name,phones,isactive,callback) {
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("admin");
@@ -26,7 +26,7 @@ MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
 }
 exports.addMe = addMe;
 
-var updateMe = function(name,phones,isactive, callback) {
+var updateMe = function(name,phones,isactive,callback) {
 MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("admin");
