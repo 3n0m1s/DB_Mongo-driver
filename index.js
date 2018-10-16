@@ -77,6 +77,25 @@ app.all('/test2', function(request, response) {
     response.end(compiled({    }));
 });
 
+app.get('/add_persona/:nome/phones/:phones/active/:isactive', function(req, res, next) {
+
+	MongoClient.connect(url, function(err, db) {
+	if (err) throw err;
+		DB.addMe(req.params.nome,req.params.phones,req.params.isactive);
+		res.json('_<OK>_');
+	});
+	
+});
+
+app.get('/upd_persona/:nome/phones/:phones/active/:isactive', function(req, res, next) {
+
+	MongoClient.connect(url, function(err, db) {
+	if (err) throw err;
+		DB.updateMe(req.params.nome,req.params.phones,req.params.isactive);
+		res.json('_<OK>_');
+	});
+	
+});
 
 
 app.use(express.static('.' + '/'));
