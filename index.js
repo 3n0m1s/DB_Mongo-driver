@@ -89,7 +89,7 @@ app.get('/add_persona/:nome/phones/:phones/active/:isactive', function(req, res,
 });
 
 //form POST - APP.POST AND req.body.x
-app.post('/add_persona', function(req, res, next) {
+app.post('/addPersona', function(req, res, next) {
 
 	MongoClient.connect(url, function(err, db) {
 	if (err) throw err;
