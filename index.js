@@ -87,6 +87,18 @@ app.get('/add_persona/:nome/phones/:phones/active/:isactive', function(req, res,
 	
 });
 
+//form POST - APP.POST AND req.body.x
+app.post('/add_persona', function(req, res, next) {
+
+	MongoClient.connect(url, function(err, db) {
+	if (err) throw err;
+		DB.addMe(req.body.nome,req.body.phones,req.body.isactive);
+		res.json('_<OK>_');
+	});
+	
+});
+
+
 app.get('/upd_persona/:nome/phones/:phones/active/:isactive', function(req, res, next) {
 
 	MongoClient.connect(url, function(err, db) {
