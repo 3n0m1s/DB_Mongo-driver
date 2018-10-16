@@ -77,6 +77,7 @@ app.all('/test2', function(request, response) {
     response.end(compiled({    }));
 });
 
+//REST API TO STORE DATA
 app.get('/add_persona/:nome/phones/:phones/active/:isactive', function(req, res, next) {
 
 	MongoClient.connect(url, function(err, db) {
@@ -98,7 +99,7 @@ app.post('/add_persona', function(req, res, next) {
 	
 });
 
-
+//REST API TO UPDATE DATA
 app.get('/upd_persona/:nome/phones/:phones/active/:isactive', function(req, res, next) {
 
 	MongoClient.connect(url, function(err, db) {
